@@ -8,3 +8,8 @@
 + https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database 
 + https://www.kaggle.com/datasets/bachrr/covid-chest-xray?datasetId=548681
 + https://www.kaggle.com/datasets/khoongweihao/covid19-xray-dataset-train-test-sets
+
+
+## NOTES
++ The papers within the literature review folder were not written by me but by their respective authors
++ Many of the images within the thesis images folder were not created by me but belong to their respective creators(cited in thesis)
