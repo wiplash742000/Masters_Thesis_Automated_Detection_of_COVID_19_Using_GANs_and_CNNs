@@ -1,0 +1,40 @@
+\chapter{Future Work and Research}
+\section{Limitations}
+\subsection{Computational Resources Offered by Google Colab Pro}
+Due to limitations with Google Colab Pro I wasn't able to surpass certain limits when training the Convolutional Neural Networks and Generative Adversarial Networks.  This means that the number of units per layer of each model could not surpass a certain limit as the runtime would run out of memory and processing power.  The model's performance may be improved in future experiments when more computational power is available.   
+\\
+Due to this limitation I was only able to train models with approximately 10 to 20 million unit parameters depending on a number of factors such as the hyper parameters of the model.  The lack of computational resources also affected the GANs as I was not able to use high resolutions for the images and settled for a smaller resolution when training them on the images, as higher resolutions are more computationally expensive.
+\subsection{Run time Limits in Google Colab Pro}
+Due to run time limits I was also frequently met with disconnects when training larger models, this meant that during the process of training the model the run time would disconnect and I would be forced to run the model again.  This is due to Google conserving computational resources and limiting the amount of time a model can train while being idle.  I was able to mitigate this somewhat by following advice from a stack overflow post and including the following code:
+\begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
+import IPython
+js_code = '''
+function ClickConnect(){
+console.log("Working");
+document.querySelector("colab-toolbar-button#connect").click()
+}
+setInterval(ClickConnect,60000)
+'''
+IPython.display.Javascript(js_code)
+\end{minted}
+The above code was used to click the connect button after a certain amount of time to ensure the runtime was not disconnected.  There was however an limit to the amount of time this code could be run without the notebook disconnecting which was estimated to be approximately 24 hours.
+\subsection{Lack of Data}
+During the course of this study I was met with a desire for more data to use to train the GANs and CNNs, I found that the data in the classes which needed augmenting was not nearly enough to train a Generative Adversarial Model to produce perfect X-Rays nor to train a CNN to increase it's generalization ability.  This greatly hindered progress when training the GANs as mode collapse frequently occurred and tended to produce black square images which looked just enough like X-Rays to fool the discriminator.  If more data were available it may have mitigated a lot of the problems which occurred during the training of the GANs and possibly would have led to more realistic X-Rays being produced and a more various selection of X-Rays.  
+\subsection{Time}
+Time was a major limitation during the writing of this thesis as Convolutional Neural Networks and Generative Adversarial Models can take a very long time to train and develop.  Due to the time-consuming trial and error effort of adjusting the hyper parameters of models and rerunning the models to compare results of previous implementations I was spending a lot of my time waiting for models to train so that I could analyze the results.  This became especially cumbersome as mode collapse occurred many times when training the GANs.  The issue of time was also exacerbated by the computational limits of Google Colab which only allows a certain amount of memory and computational power to be allocated to the user. 
+\section{Future Research}
+\subsection{Suggestions for Future Research}
+\subsubsection{Advancements in The Field of Artificial Intelligence}
+At the time this thesis was written, \today, there has been much research and many advancements taking place in regards to Generative Adversarial Networks, Convolutional Neural Networks, synthetic data generation, and in the overall field of Artificial Intelligence.  I advise researchers who wish to expand on this problem domain and this research to research new methodologies and advances in this field as technology moves at such a rapid pace and undoubtedly the implementation of the networks contained within this thesis will become archaic and under perform in comparison to the latest and greatest implementations of such networks.
+\\
+The use of synthetic data appears to contain great promise for making data more ubiquitous and to encourage many people to enter the field of Machine Learning and Artificial Intelligence due to the abundance of data throughout various fields.  Not only could the generation of synthetic data encourage new people to enter the fields of Machine Learning and Artificial Intelligence, but it would also yield more robust models of CNNs and machine learning models in general which will perhaps be able to generalize better than our current models and assist experts in a variety of fields.
+\subsubsection{Conducting Experiments with More Data}
+With more data around COVID-19 becoming public it may be possible at a future date to conduct these experiments with more data.  More data would have greatly improved the training and performance of both the Convolutional Neural Networks and Generative Adversarial Networks.  Advancements in medical imaging technology may also have a positive effect upon future research as would the use of standardised and high quality datasets.  
+\\
+I would therefore advise those looking to expand upon this research to seek out more datasets which will hopefully be more readily available in the future. 
+\section{Conclusion of Work}
+\subsection{Issues Faced and How They Should be Mitigated in Future Research}
+\subsubsection{Slow Training of Models Due to Lack of Computational Resources}
+\subsection{Summary of Results}
+\subsubsection{Analysis of Results and Their Significance}
+\subsection{Final Words}

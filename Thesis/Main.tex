@@ -39,6 +39,7 @@
 \usepackage{pgfplots}
 \usepackage{mdframed}
 \usepackage{tikz}
+\usepackage{float}
 \usepackage{tikz-3dplot}
 \usepackage{stmaryrd}
 %%Fix line breaks for long citations
@@ -46,8 +47,11 @@
 \usepackage{siunitx}
 \usepackage{tocbibind}
 \usepackage{lipsum}
+\usepackage{minted}
+
 \renewcommand{\epsilon}{\varepsilon}
-\usepackage{biblatex}
+\usepackage[style=ieee]{biblatex}
+
 \addbibresource{references.bib}
 
 \mdfdefinestyle{MyFrame}{%
@@ -98,25 +102,24 @@
     \vspace{50pt}
     
     \fontsize{14}{20} \selectfont
-    
-    \textbf{\Huge COVID - 19 Automated Detection using Convolutional Neural Networks and Generative Adversarial Networks} 
-    \vspace{40pt}
+    \setstretch{2.0}{\textbf{\Huge Automated Detection of COVID-19 using Convolutional Neural Networks and Generative Adversarial Networks}} 
+    \vspace{20pt}
     
     A thesis submitted \\
     by\\
-    \vspace{15pt}
+    \vspace{10pt}
     
     {\huge Ultan Kearns}\\
-    \vspace{15pt}
+    \vspace{10pt}
     
      in partial fulfillment of the requirements for the degree of\\ Master of Science in Computing in Big Data Analytics and Artificial Intelligence
-    \vspace{40pt}
+    \vspace{20pt}
 
 %        \fontsize{16}{20} \selectfont
     
     
     Supervisor: Dr Paul Greaney
-    \vspace{100pt}
+    \vspace{30pt}
     
     
 Submitted to Quality and Qualifications Ireland (QQI) \\
@@ -141,10 +144,10 @@ Dearbhú Cáilíochta agus Cáilíochtaí Éireann
 \chapter*{Declaration}
 \addcontentsline{toc}{chapter}{Declaration}
 
-I hereby certify that this material, which l now submit for assessment on the programme of study leading to the award of Master of Science in Computing in \dots, is entirely my own work and has not been taken from the work of others except and to the extent that such work has been cited and acknowledged within the text of my own work. No portion of the work contained in this thesis has been submitted in support of an application for another degree or qualification to this or any other institution. I understand that it is my responsibility to ensure that I have adhered to LYIT’s rules and regulations. 
+I hereby certify that this material, which l now submit for assessment on the programme of study leading to the award of Master of Science in Computing in Big Data Analytics and Artificial Intelligence, is entirely my own work and has not been taken from the work of others except and to the extent that such work has been cited and acknowledged within the text of my own work. No portion of the work contained in this thesis has been submitted in support of an application for another degree or qualification to this or any other institution. I understand that it is my responsibility to ensure that I have adhered to LYIT’s rules and regulations. 
 \bigskip
 
-I hereby certify that the material on which I have relied on for the purpose of my assessment is not deemed as personal data under the GDPR Regulations. Personal data is any data from living people that can be identified. Any personal data used for the purpose of my assessment has been psudonymised and the data set and identifiers are not held by LYIT. Alternatively, personal data has been anonymised in line with the Data Protection Commissioners Guidelines on Anonymisation.
+I hereby certify that the material on which I have relied on for the purpose of my assessment is not deemed as personal data under the GDPR Regulations. Personal data is any data from living people that can be identified. Any personal data used for the purpose of my assessment has been psuedonymised and the data set and identifiers are not held by LYIT. Alternatively, personal data has been anonymised in line with the Data Protection Commissioners Guidelines on Anonymisation.
 \bigskip
 
 I give consent for my work to be held for the purposes of education assistance to future Computing students at LYIT and it will not be shared outside the Department of Computing at LYIT. I understand that my assessment may be shared with any other third party and will be held securely in LYIT in line with the Institute's Records Retention Policy. 
@@ -157,10 +160,15 @@ I give consent for my work to be held for the purposes of education assistance t
 \bigskip
 
 \hspace{70pt} Date: \underline{\quad \quad\today\hspace{150pt}} 
-
+\include{Acknowledgements}
+\include{Acronyms}
+\listoffigures
+\listoftables
 \include{Abstract}
 \include{Chapter 1 Introduction}
 \include{chapter 2 literature review}
-\include{Acknowledgements}
+\include{Chapter 3 Implementation}
+\include{Chapter 4 Results and Conclusions}
+\include{Chapter 5 Future Work}
 \printbibliography
 \end{document}
