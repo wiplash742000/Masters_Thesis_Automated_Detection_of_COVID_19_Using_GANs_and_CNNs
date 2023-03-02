@@ -1,0 +1,10 @@
+
+CNNModels/Transfer Learning Models/Extensive X-Ray/xception_extensive_covid_Xray_model.h5
+CNNModels/Transfer Learning Models/Extensive X-Ray/resnetmodel50v2_extensive_covid_Xray_model.h5
+CNNModels/Transfer Learning Models/Extensive X-Ray/efficient_net_V2S_extensive_covid_Xrayy_model.h5
+CNNModels/Transfer Learning Models/Extensive CT/xception_extensive_covid_CT_model.h5
+CNNModels/Transfer Learning Models/Extensive CT/resnetmodel50v2_extensive_covid_CT_model.h5
+CNNModels/Transfer Learning Models/Extensive CT/efficient_net_V2S_extensive_covid_CT_model.h5
+CNNModels/BaselineModels/Extensive_COVID19_XRAY_model.h5
+CNNModels/BaselineModels/Extensive_baseline_COVID19_CT_model.h5
+CNNModels/Transfer Learning Models/Extensive X-Ray/resnetmodel50v2_extensive_covid_Xray_model.h5
