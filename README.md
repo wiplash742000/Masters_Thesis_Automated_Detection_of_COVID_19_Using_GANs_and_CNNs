@@ -32,3 +32,6 @@ This project was part of attaining a 60 credit MSc in Artificial Intelligence an
 + Datasets were not compiled by me original sources cited in thesis - also above in the sources for datasets section of this ReadMe
 + Extensive X-Ray dataset was too large to upload to this repo please use the link mentioned in sources for datasets
 + Due to limitations with Git LFS I was unable to save the GAN models to this repository will include link to drive at a later time.
+
++ Link to GAN Models Google Drive: https://drive.google.com/drive/folders/1-uTalRnB5MiZk5jsh4TDGxclDqvoJUaN?usp=sharing
++ Link to CNN Models Google Drive: https://drive.google.com/drive/folders/1bBrI8bLj5-YWCqaNWRShTPkWvDhM1Ut6?usp=sharing
