@@ -275,7 +275,7 @@ The results obtained from this experiment are shown in table \ref{tab:Classifica
          \hline
     \end{tabular}
     \caption{Classification results on balanced test set (Data Augmentation using GANs)\cite{litReviewGanDataAugmentation}}
-    \label{tab:Classification results on imbalanced test set (Data Augmentation using GANs)}
+    \label{tab:Classification results on balanced test set (Data Augmentation using GANs)}
 \end{table}
 It's clear from the tables above the use of SMOTE and ADASYN underperformed in accuracy on the imbalanced test set but had higher recall when compared with the original.  In the second table, when tested on the balanced test set, SMOTE and ADASYN outperformed the original in terms of accuracy and recall. This is due to the original data set being imbalanced, the tree trained on this data set predicts almost all samples as negative. The GAN using a hidden layer of 128 performed very poorly in both instances when compared with other GAN architectures and this is called out by the researchers in the paper.  Oversampling the minority seemed to increase the recall score of the classifier but at the expense of precision.  The results shown above will prove useful in guiding the development of the architecture used in the GANs to generate synthetic COVID data, and to over sample the minority of the classes within the various datasets I plan on using to train the classifier, this will be discussed further in later chapters.
 \\

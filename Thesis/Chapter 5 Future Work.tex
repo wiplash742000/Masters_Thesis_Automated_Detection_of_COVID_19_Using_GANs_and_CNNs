@@ -1,9 +1,14 @@
 \chapter{Future Work and Research}
 \section{Limitations}
+In this section I will outline limitations faced when conducting this research and where possible include ways in which they may be mitigated when conducting future research into this problem domain.
 \subsection{Computational Resources Offered by Google Colab Pro}
 Due to limitations with Google Colab Pro I wasn't able to surpass certain limits when training the Convolutional Neural Networks and Generative Adversarial Networks.  This means that the number of units per layer of each model could not surpass a certain limit as the runtime would run out of memory and processing power.  The model's performance may be improved in future experiments when more computational power is available.   
 \\
-Due to this limitation I was only able to train models with approximately 10 to 20 million unit parameters depending on a number of factors such as the hyper parameters of the model.  The lack of computational resources also affected the GANs as I was not able to use high resolutions for the images and settled for a smaller resolution when training them on the images, as higher resolutions are more computationally expensive.
+Due to this limitation models with approximately 10 to 20 million unit parameters maxed out the resources available depending on a number of factors such as the hyper parameters of the model.  The lack of computational resources also affected the GANs as I was not able to use high resolutions for the images and settled for a smaller resolution when training them on the images, as higher resolutions are more computationally expensive.
+\\
+Larger models could be trained when the option was available to opt for premium GPU on Google Colab but Google has only allocated a certain amount of compute units per month to pro users, meaning that the access to premium GPUs were limited.  This affected the training time and size of models I was able to create.
+\\
+This limitation also meant that I was unable to train the GANs to produce higher resolution images.  The images produced by the GANs mentioned in this paper have a resolution of $128\times128$, in future research the CNNs may possibly be improved by using a resolution consistent with that of the dataset.
 \subsection{Run time Limits in Google Colab Pro}
 Due to run time limits I was also frequently met with disconnects when training larger models, this meant that during the process of training the model the run time would disconnect and I would be forced to run the model again.  This is due to Google conserving computational resources and limiting the amount of time a model can train while being idle.  I was able to mitigate this somewhat by following advice from a stack overflow post and including the following code:
 \begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
@@ -18,11 +23,16 @@ setInterval(ClickConnect,60000)
 IPython.display.Javascript(js_code)
 \end{minted}
 The above code was used to click the connect button after a certain amount of time to ensure the runtime was not disconnected.  There was however an limit to the amount of time this code could be run without the notebook disconnecting which was estimated to be approximately 24 hours.
+\\
+There was also an issue with Google taking away the use of a TPU and GPU backend, without a TPU or GPU to train the models they could take days to train.  Due to this limitation the improvement of transfer learning models was greatly hindered as they require a lot of computational power to train.
 \subsection{Lack of Data}
 During the course of this study I was met with a desire for more data to use to train the GANs and CNNs, I found that the data in the classes which needed augmenting was not nearly enough to train a Generative Adversarial Model to produce perfect X-Rays nor to train a CNN to increase it's generalization ability.  This greatly hindered progress when training the GANs as mode collapse frequently occurred and tended to produce black square images which looked just enough like X-Rays to fool the discriminator.  If more data were available it may have mitigated a lot of the problems which occurred during the training of the GANs and possibly would have led to more realistic X-Rays being produced and a more various selection of X-Rays.  
 \subsection{Time}
 Time was a major limitation during the writing of this thesis as Convolutional Neural Networks and Generative Adversarial Models can take a very long time to train and develop.  Due to the time-consuming trial and error effort of adjusting the hyper parameters of models and rerunning the models to compare results of previous implementations I was spending a lot of my time waiting for models to train so that I could analyze the results.  This became especially cumbersome as mode collapse occurred many times when training the GANs.  The issue of time was also exacerbated by the computational limits of Google Colab which only allows a certain amount of memory and computational power to be allocated to the user. 
+\subsection{Financial Limitations}
+The training of very large models was not limited  due to financial limitations, as of today's date Google charges 11.38 euro for 100 compute units and 51.97 euro for 500 compute units.  This meant I was only able to train the GAN models for a certain number of epochs which I limited to 100 epochs to conserve compute units.
 \section{Future Research}
+This section will discuss future research into this problem domain and information which may be valuable to those wishing to explore and expand the use of GANs in the recreation of X-Ray / CT images. 
 \subsection{Suggestions for Future Research}
 \subsubsection{Advancements in The Field of Artificial Intelligence}
 At the time this thesis was written, \today, there has been much research and many advancements taking place in regards to Generative Adversarial Networks, Convolutional Neural Networks, synthetic data generation, and in the overall field of Artificial Intelligence.  I advise researchers who wish to expand on this problem domain and this research to research new methodologies and advances in this field as technology moves at such a rapid pace and undoubtedly the implementation of the networks contained within this thesis will become archaic and under perform in comparison to the latest and greatest implementations of such networks.
@@ -34,7 +44,20 @@ With more data around COVID-19 becoming public it may be possible at a future da
 I would therefore advise those looking to expand upon this research to seek out more datasets which will hopefully be more readily available in the future. 
 \section{Conclusion of Work}
 \subsection{Issues Faced and How They Should be Mitigated in Future Research}
+In this section I will discuss issues which were faced when completing this research and suggest ways in which they could be mitigated.
 \subsubsection{Slow Training of Models Due to Lack of Computational Resources}
+This issue could be mitigated by investing in faster hardware, due to the lack of an NVIDIA GPU the models were trained using Google Colab which can be slow(especially when using the free tier).  To mitigate this issue I strongly suggest future researchers invest in a powerful NVIDIA GPU as NVIDIA has invested a lot of money into AI research and unlike AMD, NVIDIA has compatibility with most ML / AI frameworks.
+\subsubsection{Poor Quality Synthetic Data}
+This issue could be mitigated by having a dedicated team to analyze the quality of each synthetic image and prune those which were of poor quality.  Due to time-constraints we were unable to review each and every image which may have caused some models to perform worse than they normally would have when trained on pruned synthetic images.
 \subsection{Summary of Results}
+In this section I will give a brief summary of the results from the research and their significance.  I will detail what has been achieved upon completion of the implementation of the AI models.
 \subsubsection{Analysis of Results and Their Significance}
+Overall a number of augmented models showed improvements in terms of both accuracy and loss.  This means that the augmented models performed better than the original models.  The increase in performance of the augmented models may provide advantages in this area and allow for doctors to more easily diagnose patients more accurately, which would in turn allow doctors to have more free-time to spend on other patients.  The results from this study could possibly be used in a number of fields and different areas other than the automated diagnosis of COVID-19 but more research will need to be done to gauge synthetically generated data in said areas and fields. 
+\\
+The overall results of this study found that synthetic data was useful for some model architectures and improved a number of models but a number of models trained on the synthetic data performed poorly compared to models trained on real data.  It appears more research is needed in this area as computational limitations and lack of data pruning may have skewed the results negatively.
 \subsection{Final Words}
+During the course of this thesis I learned a lot about the field of Artificial Intelligence and best practices.  I also learned a number of new concepts and techniques when training and evaluating models.  The research was complex and tough at times but it was extremely rewarding.  The knowledge I have gained from completing this thesis is priceless and it has sparked an interest in the field of Artificial Intelligence which I hope will last a lifetime. 
+\\
+I hope that through the research conducted in this thesis other researchers can explore the use of synthetic data across a number of fields and areas.  I also hope that this thesis provides insight to said researchers on how to go about and conduct their studies.
+\\
+In closing although tough this thesis has been an incredible journey from start to finish.  I would like to end this thesis with a quote from a scientist I admire which I find to be quite fitting \begin{quote}``We can only see a short distance ahead but we can see plenty there that needs to be done.`` - Alan Turing\end{quote}
