@@ -48,6 +48,8 @@
 \usepackage{tocbibind}
 \usepackage{lipsum}
 \usepackage{minted}
+\usepackage{caption}
+\usepackage[list=true,listformat=simple]{subcaption}
 
 \renewcommand{\epsilon}{\varepsilon}
 \usepackage[style=ieee]{biblatex}
@@ -133,14 +135,11 @@ Dearbhú Cáilíochta agus Cáilíochtaí Éireann
 
 \setcounter{page}{1}
 
-%\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{2}
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
 \tableofcontents
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
-
-%\listoffigures
-
 \chapter*{Declaration}
 \addcontentsline{toc}{chapter}{Declaration}
 
@@ -166,9 +165,9 @@ I give consent for my work to be held for the purposes of education assistance t
 \listoftables
 \include{Abstract}
 \include{Chapter 1 Introduction}
-\include{chapter 2 literature review}
-\include{Chapter 3 Implementation}
-\include{Chapter 4 Results and Conclusions}
-\include{Chapter 5 Future Work}
+\include{Chapter 2 Literature Review}
+\include{Chapter 3 Design & Implementation}
+\include{Chapter 4 Results}
+\include{Chapter 5 Conclusions}
 \printbibliography
 \end{document}
